@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://andrewflores-23.github.io/Noili-s-Windows/'),
-  title: "Noily's Window Treatment & More | Diseño de interiores",
+  title: { default: "Noily's Window Treatment & More | Diseño de interiores", template: "%s · Noily's" },
   description: 'Diseño interior, mobiliario y tratamientos de ventanas a medida en Guanacaste, Costa Rica.',
   openGraph: {
     title: "Noily's Window Treatment & More",
