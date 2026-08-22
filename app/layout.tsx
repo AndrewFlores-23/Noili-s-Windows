@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://noilyswindowtreatment.com'),
+  metadataBase: new URL('https://andrewflores-23.github.io/Noili-s-Windows/'),
   title: "Noily's Window Treatment & More | Diseño de interiores",
   description: 'Diseño interior, mobiliario y tratamientos de ventanas a medida en Guanacaste, Costa Rica.',
   openGraph: {
@@ -10,13 +10,13 @@ export const metadata: Metadata = {
     description: 'Diseño interior, mobiliario y tratamientos de ventanas a medida en Guanacaste, Costa Rica.',
     type: 'website',
     locale: 'es_CR',
-    images: [{ url: '/og.jpg', width: 1200, height: 630, alt: "Noily's Window Treatment & More" }],
+    images: [{ url: 'https://andrewflores-23.github.io/Noili-s-Windows/og.jpg', width: 1200, height: 630, alt: "Noily's Window Treatment & More" }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Noily's Window Treatment & More",
     description: 'Diseño interior, mobiliario y tratamientos de ventanas a medida en Guanacaste, Costa Rica.',
-    images: ['/og.jpg'],
+    images: ['https://andrewflores-23.github.io/Noili-s-Windows/og.jpg'],
   },
 };
 

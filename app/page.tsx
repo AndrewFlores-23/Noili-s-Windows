@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const asset = (path: string) => `${basePath}${path}`;
+
 type CatalogItem = {
   title: string;
   category: 'blinds' | 'drapes' | 'shades' | 'curtains' | 'accessories' | 'valances' | 'bedding';
@@ -11,13 +14,13 @@ type CatalogItem = {
 };
 
 const catalogItems: CatalogItem[] = [
-  { title: 'Persianas a medida', category: 'blinds', label: 'Blinds · Persianas', image: '/media/project-living.png', alt: 'Persianas instaladas en una sala luminosa' },
-  { title: 'Cortinajes decorativos', category: 'drapes', label: 'Drapes · Cortinajes', image: '/media/project-curtains.png', alt: 'Cortinajes blancos de piso a techo en una sala contemporánea' },
-  { title: 'Screen & blackout', category: 'shades', label: 'Shades · Enrollables', image: '/media/project-living.png', alt: 'Paneles roller screen en una sala luminosa' },
-  { title: 'Cortinas a medida', category: 'curtains', label: 'Curtains · Cortinas', image: '/media/project-curtains.png', alt: 'Cortinas blancas instaladas a medida' },
-  { title: 'Cojines & accesorios', category: 'accessories', label: 'Accessories · Accesorios', image: '/media/collection-pillows.png', alt: 'Colección de cojines y accesorios decorativos' },
-  { title: 'Cenefas personalizadas', category: 'valances', label: 'Valances · Cenefas', image: '/media/project-bedroom.png', alt: 'Dormitorio coordinado con textiles personalizados' },
-  { title: 'Ropa de cama', category: 'bedding', label: 'Bedding · Ropa de cama', image: '/media/collection-red.png', alt: 'Cojines y ropa de cama coordinados' },
+  { title: 'Persianas a medida', category: 'blinds', label: 'Blinds · Persianas', image: asset('/media/project-living.png'), alt: 'Persianas instaladas en una sala luminosa' },
+  { title: 'Cortinajes decorativos', category: 'drapes', label: 'Drapes · Cortinajes', image: asset('/media/project-curtains.png'), alt: 'Cortinajes blancos de piso a techo en una sala contemporánea' },
+  { title: 'Screen & blackout', category: 'shades', label: 'Shades · Enrollables', image: asset('/media/project-living.png'), alt: 'Paneles roller screen en una sala luminosa' },
+  { title: 'Cortinas a medida', category: 'curtains', label: 'Curtains · Cortinas', image: asset('/media/project-curtains.png'), alt: 'Cortinas blancas instaladas a medida' },
+  { title: 'Cojines & accesorios', category: 'accessories', label: 'Accessories · Accesorios', image: asset('/media/collection-pillows.png'), alt: 'Colección de cojines y accesorios decorativos' },
+  { title: 'Cenefas personalizadas', category: 'valances', label: 'Valances · Cenefas', image: asset('/media/project-bedroom.png'), alt: 'Dormitorio coordinado con textiles personalizados' },
+  { title: 'Ropa de cama', category: 'bedding', label: 'Bedding · Ropa de cama', image: asset('/media/collection-red.png'), alt: 'Cojines y ropa de cama coordinados' },
 ];
 
 const filters = [
@@ -62,8 +65,8 @@ export default function Home() {
   return (
     <main>
       <section className="hero" id="inicio" aria-label="Presentación de Noily's">
-        <video ref={videoRef} className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/media/project-living.png" aria-hidden="true">
-          <source src="/media/hero-optimized.mp4" type="video/mp4" />
+        <video ref={videoRef} className="hero-video" autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-living.png')} aria-hidden="true">
+          <source src={asset('/media/hero-optimized.mp4')} type="video/mp4" />
         </video>
         <div className="hero-shade" />
 
@@ -161,15 +164,15 @@ export default function Home() {
         </div>
         <div className="project-grid">
           <article className="project-card project-large">
-            <img src="/media/project-curtains.png" alt="Sala contemporánea con cortinas blancas de piso a techo" loading="lazy" />
+            <img src={asset('/media/project-curtains.png')} alt="Sala contemporánea con cortinas blancas de piso a techo" loading="lazy" />
             <div className="project-meta"><span>Interiorismo · Cortinas</span><h3>Luz en equilibrio</h3></div>
           </article>
           <article className="project-card project-top">
-            <img src="/media/project-living.png" alt="Sala con sofá modular blanco y carpintería de madera" loading="lazy" />
+            <img src={asset('/media/project-living.png')} alt="Sala con sofá modular blanco y carpintería de madera" loading="lazy" />
             <div className="project-meta"><span>Mobiliario a medida</span><h3>Calma tropical</h3></div>
           </article>
           <article className="project-card project-bottom">
-            <img src="/media/project-suite-lilac.png" alt="Suite decorada con mobiliario y textiles color lavanda" loading="lazy" />
+            <img src={asset('/media/project-suite-lilac.png')} alt="Suite decorada con mobiliario y textiles color lavanda" loading="lazy" />
             <div className="project-meta"><span>Suite · Textiles</span><h3>Un acento personal</h3></div>
           </article>
         </div>
@@ -206,7 +209,7 @@ export default function Home() {
 
       <section className="process" id="proceso">
         <div className="process-photo">
-          <img src="/media/project-lounge.png" alt="Sala de muestras con mobiliario, cortinas y textiles" loading="lazy" />
+          <img src={asset('/media/project-lounge.png')} alt="Sala de muestras con mobiliario, cortinas y textiles" loading="lazy" />
         </div>
         <div className="process-content">
           <p className="eyebrow light">Cómo trabajamos</p>
@@ -222,8 +225,8 @@ export default function Home() {
 
       <section className="about section-pad" id="nosotros">
         <div className="about-image">
-          <img src="/media/project-bedroom.png" alt="Dormitorio sereno con cabecera tapizada y textiles suaves" loading="lazy" />
-          <div className="about-mark"><img src="/media/noilys-logo.png" alt="Logo de Noily's Window Treatment & More" /></div>
+          <img src={asset('/media/project-bedroom.png')} alt="Dormitorio sereno con cabecera tapizada y textiles suaves" loading="lazy" />
+          <div className="about-mark"><img src={asset('/media/noilys-logo.png')} alt="Logo de Noily's Window Treatment & More" /></div>
         </div>
         <div className="about-copy">
           <p className="eyebrow dark">Noily&apos;s Window Treatment &amp; More</p>
@@ -271,7 +274,7 @@ export default function Home() {
         <div className="footer-social"><a href="https://www.instagram.com/noilyswindows/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://wa.me/50689760770" target="_blank" rel="noreferrer">WhatsApp ↗</a><a href="mailto:noilyswindowtreatment@gmail.com">Correo</a></div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Noily&apos;s Window Treatment &amp; More</span>
-          <span className="aw-credit" aria-label="Sitio creado por AW-RiseCR"><span>Diseño y desarrollo por</span><img src="/media/aw-rise-logo.webp" alt="AW-RiseCR" /><strong>AW-RiseCR</strong></span>
+          <span className="aw-credit" aria-label="Sitio creado por AW-RiseCR"><span>Diseño y desarrollo por</span><img src={asset('/media/aw-rise-logo.webp')} alt="AW-RiseCR" /><strong>AW-RiseCR</strong></span>
         </div>
       </footer>
 
