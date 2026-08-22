@@ -4,26 +4,31 @@ import { useEffect, useRef, useState } from 'react';
 
 type CatalogItem = {
   title: string;
-  category: 'ventanas' | 'mobiliario' | 'textiles';
+  category: 'blinds' | 'drapes' | 'shades' | 'curtains' | 'accessories' | 'valances' | 'bedding';
   label: string;
   image: string;
   alt: string;
 };
 
 const catalogItems: CatalogItem[] = [
-  { title: 'Cortinas a medida', category: 'ventanas', label: 'Ventanas', image: '/media/project-curtains.png', alt: 'Cortinas blancas instaladas en una sala contemporánea' },
-  { title: 'Screen & blackout', category: 'ventanas', label: 'Ventanas', image: '/media/project-living.png', alt: 'Paneles roller screen en una sala luminosa' },
-  { title: 'Sofás personalizados', category: 'mobiliario', label: 'Mobiliario', image: '/media/project-living.png', alt: 'Sofá modular blanco con base de madera' },
-  { title: 'Butacas & sillones', category: 'mobiliario', label: 'Mobiliario', image: '/media/project-suite-lilac.png', alt: 'Butacas tapizadas en tono lavanda' },
-  { title: 'Cojines decorativos', category: 'textiles', label: 'Textiles', image: '/media/collection-pillows.png', alt: 'Colección de cojines decorativos en exhibición' },
-  { title: 'Bedding & accesorios', category: 'textiles', label: 'Textiles', image: '/media/collection-red.png', alt: 'Cojines rojos y ropa de cama blanca' },
+  { title: 'Persianas a medida', category: 'blinds', label: 'Blinds · Persianas', image: '/media/project-living.png', alt: 'Persianas instaladas en una sala luminosa' },
+  { title: 'Cortinajes decorativos', category: 'drapes', label: 'Drapes · Cortinajes', image: '/media/project-curtains.png', alt: 'Cortinajes blancos de piso a techo en una sala contemporánea' },
+  { title: 'Screen & blackout', category: 'shades', label: 'Shades · Enrollables', image: '/media/project-living.png', alt: 'Paneles roller screen en una sala luminosa' },
+  { title: 'Cortinas a medida', category: 'curtains', label: 'Curtains · Cortinas', image: '/media/project-curtains.png', alt: 'Cortinas blancas instaladas a medida' },
+  { title: 'Cojines & accesorios', category: 'accessories', label: 'Accessories · Accesorios', image: '/media/collection-pillows.png', alt: 'Colección de cojines y accesorios decorativos' },
+  { title: 'Cenefas personalizadas', category: 'valances', label: 'Valances · Cenefas', image: '/media/project-bedroom.png', alt: 'Dormitorio coordinado con textiles personalizados' },
+  { title: 'Ropa de cama', category: 'bedding', label: 'Bedding · Ropa de cama', image: '/media/collection-red.png', alt: 'Cojines y ropa de cama coordinados' },
 ];
 
 const filters = [
   { key: 'todos', label: 'Todo' },
-  { key: 'ventanas', label: 'Ventanas' },
-  { key: 'mobiliario', label: 'Mobiliario' },
-  { key: 'textiles', label: 'Textiles' },
+  { key: 'blinds', label: 'Blinds' },
+  { key: 'drapes', label: 'Drapes' },
+  { key: 'shades', label: 'Shades' },
+  { key: 'curtains', label: 'Curtains' },
+  { key: 'accessories', label: 'Accessories' },
+  { key: 'valances', label: 'Valances' },
+  { key: 'bedding', label: 'Bedding' },
 ] as const;
 
 export default function Home() {
@@ -123,7 +128,7 @@ export default function Home() {
         <div className="service-card service-card-featured">
           <span className="service-number">01</span>
           <h3>Tratamientos de ventanas</h3>
-          <p>Cortinas, roller shades, screen, blackout y soluciones motorizadas que equilibran luz, privacidad y estilo.</p>
+          <p>Blinds, drapes, shades, curtains y valances a medida para equilibrar luz, privacidad y estilo.</p>
           <span className="service-arrow" aria-hidden="true">↗</span>
         </div>
         <div className="service-card">
@@ -134,8 +139,8 @@ export default function Home() {
         </div>
         <div className="service-card">
           <span className="service-number">03</span>
-          <h3>Textiles & accesorios</h3>
-          <p>Cojines, ropa de cama y una curaduría de telas, colores y texturas para completar cada ambiente.</p>
+          <h3>Accessories & bedding</h3>
+          <p>Cojines, accesorios, ropa de cama y una curaduría de telas, colores y texturas para completar cada ambiente.</p>
           <span className="service-arrow" aria-hidden="true">↗</span>
         </div>
         <div className="service-card">
@@ -176,7 +181,7 @@ export default function Home() {
             <p className="eyebrow dark">Nuestro catálogo</p>
             <h2>Piezas para <em>hacerlo tuyo.</em></h2>
           </div>
-          <p>Explora por categoría. Cada pieza puede personalizarse en medidas, telas, tonos y acabados.</p>
+          <p>Explora todas nuestras líneas. Cada pieza puede personalizarse en medidas, telas, tonos y acabados.</p>
         </div>
         <div className="filter-row" role="group" aria-label="Filtrar catálogo">
           {filters.map((item) => (
@@ -236,7 +241,10 @@ export default function Home() {
         <div className="contact-intro">
           <p className="eyebrow light">Hablemos de tu espacio</p>
           <h2>Tu próximo ambiente empieza con una <em>conversación.</em></h2>
-          <a className="button button-light" href="https://www.instagram.com/noilyswindows/" target="_blank" rel="noreferrer">Solicitar una asesoría <span aria-hidden="true">↗</span></a>
+          <div className="contact-actions">
+            <a className="button button-light" href="https://wa.me/50689760770" target="_blank" rel="noreferrer">Escribir por WhatsApp <span aria-hidden="true">↗</span></a>
+            <a className="contact-phone" href="tel:+50626536434">Tel. +506 2653-6434</a>
+          </div>
         </div>
         <div className="locations">
           <article>
@@ -248,6 +256,11 @@ export default function Home() {
             <p>Centro Comercial Paseo del Mar<br />Local 03–1A<br />Guanacaste, Costa Rica</p>
           </article>
         </div>
+        <div className="contact-details">
+          <span>Correos</span>
+          <a href="mailto:noilyswindowtreatment@gmail.com">noilyswindowtreatment@gmail.com</a>
+          <a href="mailto:noily.campos@gmail.com">noily.campos@gmail.com</a>
+        </div>
       </section>
 
       <footer className="footer">
@@ -255,7 +268,7 @@ export default function Home() {
         <div className="footer-links">
           <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#coleccion">Catálogo</a>
         </div>
-        <div className="footer-social"><a href="https://www.instagram.com/noilyswindows/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="#contacto">Contacto</a></div>
+        <div className="footer-social"><a href="https://www.instagram.com/noilyswindows/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://wa.me/50689760770" target="_blank" rel="noreferrer">WhatsApp ↗</a><a href="mailto:noilyswindowtreatment@gmail.com">Correo</a></div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Noily&apos;s Window Treatment &amp; More</span>
           <span className="aw-credit" aria-label="Sitio creado por AW-RiseCR"><span>Diseño y desarrollo por</span><img src="/media/aw-rise-logo.webp" alt="AW-RiseCR" /><strong>AW-RiseCR</strong></span>
