@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteFooter from '../components/SiteFooter';
 import SiteHeader from '../components/SiteHeader';
+import ArrowIcon from '../components/ArrowIcon';
 import { asset } from '../data';
 
 export const metadata: Metadata = { title: 'Servicios', description: 'Tratamientos de ventanas, mobiliario, textiles y diseño interior con servicio integral.' };
@@ -22,7 +23,7 @@ export default function ServicesPage() {
         {services.map((service, index) => (
           <article className={`service-row ${index % 2 ? 'reverse' : ''}`} key={service.number}>
             <div className="service-row-image"><img src={asset(service.image)} alt={service.title} loading="lazy" /></div>
-            <div className="service-row-copy"><span>{service.number}</span><p className="kicker">{service.eyebrow}</p><h2>{service.title}</h2><p>{service.copy}</p><Link className="text-link" href="/contacto/">Consultar servicio <span>↗</span></Link></div>
+            <div className="service-row-copy"><span>{service.number}</span><p className="kicker">{service.eyebrow}</p><h2>{service.title}</h2><p>{service.copy}</p><Link className="text-link" href="/contacto/">Consultar servicio <ArrowIcon /></Link></div>
           </article>
         ))}
       </section>

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { catalogFilters, catalogItems } from '../data';
+import ArrowIcon from './ArrowIcon';
 
 export default function CatalogExplorer() {
   const [filter, setFilter] = useState<(typeof catalogFilters)[number]['key']>('todos');
@@ -24,7 +25,7 @@ export default function CatalogExplorer() {
             </div>
             <div className="catalog-product-copy">
               <div><span>{item.categoryLabel}</span><h2>{item.title}</h2><p>{item.note}</p></div>
-              <Link href="/contacto/" aria-label={`Consultar por ${item.title}`}>↗</Link>
+              <Link href="/contacto/" aria-label={`Consultar por ${item.title}`}><ArrowIcon /></Link>
             </div>
           </article>
         ))}

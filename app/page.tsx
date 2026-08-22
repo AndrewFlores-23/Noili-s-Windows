@@ -2,6 +2,7 @@ import Link from 'next/link';
 import SiteFooter from './components/SiteFooter';
 import SiteHeader from './components/SiteHeader';
 import VideoHero from './components/VideoHero';
+import ArrowIcon from './components/ArrowIcon';
 import { asset, catalogItems, projects } from './data';
 
 export default function Home() {
@@ -23,14 +24,14 @@ export default function Home() {
       <section className="home-catalog page-shell">
         <div className="section-heading">
           <div><p className="kicker">Catálogo</p><h2>Un catálogo para imaginar <em>tu espacio.</em></h2></div>
-          <div className="heading-side"><p>Explora nuestras siete líneas y consulta telas, medidas, tonos y acabados disponibles.</p><Link className="text-link" href="/catalogo/">Ver catálogo completo <span>↗</span></Link></div>
+          <div className="heading-side"><p>Explora nuestras siete líneas y consulta telas, medidas, tonos y acabados disponibles.</p><Link className="text-link" href="/catalogo/">Ver catálogo completo <ArrowIcon /></Link></div>
         </div>
         <div className="catalog-preview">
           {catalogItems.slice(0, 3).map((item, index) => (
             <Link className={`preview-card ${index === 0 ? 'preview-featured' : ''}`} href="/catalogo/" key={item.title}>
               <img src={item.image} alt={item.alt} loading="lazy" /><span className="preview-gradient" />
               {item.conceptual && <small className="concept-badge glass-panel">Inspiración visual</small>}
-              <div><small>{item.categoryLabel}</small><h3>{item.title}</h3><b>↗</b></div>
+              <div><small>{item.categoryLabel}</small><h3>{item.title}</h3><b><ArrowIcon /></b></div>
             </Link>
           ))}
         </div>
@@ -42,7 +43,7 @@ export default function Home() {
       <section className="home-projects page-shell">
         <div className="section-heading">
           <div><p className="kicker">Proyectos reales</p><h2>Diseñados para <em>ser vividos.</em></h2></div>
-          <div className="heading-side"><p>Una muestra de ambientes realizados por Noily&apos;s en los que cada detalle cumple una función.</p><Link className="text-link" href="/proyectos/">Explorar proyectos <span>↗</span></Link></div>
+          <div className="heading-side"><p>Una muestra de ambientes realizados por Noily&apos;s en los que cada detalle cumple una función.</p><Link className="text-link" href="/proyectos/">Explorar proyectos <ArrowIcon /></Link></div>
         </div>
         <div className="project-preview-grid">
           {projects.slice(0, 3).map((project, index) => (
@@ -56,7 +57,7 @@ export default function Home() {
       <section className="service-preview">
         <img className="service-preview-bg" src={asset('/media/catalog-furniture.webp')} alt="" loading="lazy" /><div className="service-preview-shade" />
         <div className="page-shell service-preview-inner">
-          <div className="section-heading light-heading"><div><p className="kicker kicker-light">Lo que hacemos</p><h2>Desde la ventana hasta el <em>último detalle.</em></h2></div><Link className="pill-button light" href="/servicios/">Conocer servicios <span>↗</span></Link></div>
+          <div className="section-heading light-heading"><div><p className="kicker kicker-light">Lo que hacemos</p><h2>Desde la ventana hasta el <em>último detalle.</em></h2></div><Link className="pill-button light" href="/servicios/">Conocer servicios <ArrowIcon /></Link></div>
           <div className="service-glass-grid">
             {[
               ['01', 'Window treatments', 'Control de luz y privacidad a medida.'],
@@ -69,10 +70,10 @@ export default function Home() {
 
       <section className="home-cta page-shell">
         <div className="home-cta-copy"><p className="kicker">Las Catalinas · Huacas</p><h2>Tu próximo ambiente empieza con una conversación.</h2></div>
-        <Link className="round-link" href="/contacto/"><span>Hablemos</span><b>↗</b></Link>
+        <Link className="round-link" href="/contacto/"><span>Hablemos</span><b><ArrowIcon /></b></Link>
       </section>
       <SiteFooter />
-      <Link className="mobile-contact" href="/contacto/"><span>Solicitar asesoría</span><b>↗</b></Link>
+      <Link className="mobile-contact" href="/contacto/"><span>Solicitar asesoría</span><b><ArrowIcon /></b></Link>
     </main>
   );
 }

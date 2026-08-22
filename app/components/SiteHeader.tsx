@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { asset, navItems } from '../data';
+import ArrowIcon from './ArrowIcon';
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function SiteHeader() {
             <Link key={item.href} className={pathname === item.href ? 'active' : ''} href={item.href}>{item.label}</Link>
           ))}
         </nav>
-        <Link className="nav-cta" href="/contacto/">Cotizar <span>↗</span></Link>
+        <Link className="nav-cta" href="/contacto/">Cotizar <ArrowIcon /></Link>
         <button className="nav-menu-button" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-navigation">
           <span /><span /><span className="sr-only">{open ? 'Cerrar menú' : 'Abrir menú'}</span>
         </button>
@@ -30,7 +31,7 @@ export default function SiteHeader() {
       <div className={`mobile-navigation glass-panel ${open ? 'open' : ''}`} id="mobile-navigation" aria-hidden={!open}>
         <nav aria-label="Navegación móvil">
           {navItems.map((item, index) => (
-            <Link key={item.href} href={item.href} onClick={() => setOpen(false)}><small>0{index + 1}</small>{item.label}<span>↗</span></Link>
+            <Link key={item.href} href={item.href} onClick={() => setOpen(false)}><small>0{index + 1}</small>{item.label}<ArrowIcon /></Link>
           ))}
         </nav>
         <p>Las Catalinas · Huacas<br />Guanacaste, Costa Rica</p>

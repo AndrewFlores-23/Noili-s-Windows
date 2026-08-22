@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { asset, navItems } from '../data';
+import ArrowIcon from './ArrowIcon';
 
 export default function SiteFooter() {
   return (
@@ -14,9 +15,9 @@ export default function SiteFooter() {
           {navItems.map((item) => <Link href={item.href} key={item.href}>{item.label}</Link>)}
         </nav>
         <div className="footer-connect">
-          <a href="https://www.instagram.com/noilyswindows/" target="_blank" rel="noreferrer">Instagram ↗</a>
-          <a href="https://wa.me/50689760770" target="_blank" rel="noreferrer">WhatsApp ↗</a>
-          <a href="mailto:noilyswindowtreatment@gmail.com">Correo ↗</a>
+          <a href="https://www.instagram.com/noilyswindows/" target="_blank" rel="noreferrer">Instagram <ArrowIcon /></a>
+          <a href="https://wa.me/50689760770" target="_blank" rel="noreferrer">WhatsApp <ArrowIcon /></a>
+          <a href="mailto:noilyswindowtreatment@gmail.com">Correo <ArrowIcon /></a>
         </div>
       </div>
       <div className="footer-bottom">

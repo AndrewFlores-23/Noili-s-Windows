@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteFooter from '../components/SiteFooter';
 import SiteHeader from '../components/SiteHeader';
+import ArrowIcon from '../components/ArrowIcon';
 import { projects } from '../data';
 
 export const metadata: Metadata = { title: 'Proyectos', description: 'Selección de trabajos reales de diseño interior, textiles, cortinas y mobiliario a medida.' };
@@ -19,7 +20,7 @@ export default function ProjectsPage() {
           </article>
         ))}
       </section>
-      <section className="project-cta page-shell"><div><p className="kicker">Tu espacio puede ser el siguiente</p><h2>Diseñemos algo auténticamente tuyo.</h2></div><Link className="round-link" href="/contacto/"><span>Iniciar proyecto</span><b>↗</b></Link></section>
+      <section className="project-cta page-shell"><div><p className="kicker">Tu espacio puede ser el siguiente</p><h2>Diseñemos algo auténticamente tuyo.</h2></div><Link className="round-link" href="/contacto/"><span>Iniciar proyecto</span><b><ArrowIcon /></b></Link></section>
       <SiteFooter />
     </main>
   );

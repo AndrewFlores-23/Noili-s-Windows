@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { asset } from '../data';
+import ArrowIcon from './ArrowIcon';
 
 export default function VideoHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -33,12 +34,12 @@ export default function VideoHero() {
         <h1>Espacios que se sienten tan bien como se ven.</h1>
         <p>Diseño interior, mobiliario y tratamientos de ventanas hechos a tu medida.</p>
         <div className="hero-actions">
-          <Link className="pill-button primary" href="/proyectos/">Ver proyectos <span>↗</span></Link>
+          <Link className="pill-button primary" href="/proyectos/">Ver proyectos <ArrowIcon /></Link>
           <Link className="pill-button ghost" href="/catalogo/">Abrir catálogo</Link>
         </div>
       </div>
       <button className="media-control glass-panel" type="button" onClick={toggle} aria-label={playing ? 'Pausar video' : 'Reproducir video'}>
-        <span aria-hidden="true">{playing ? 'Ⅱ' : '▶'}</span>{playing ? 'Pausar' : 'Reproducir'}
+        <span className={`media-symbol ${playing ? 'is-pause' : 'is-play'}`} aria-hidden="true" />{playing ? 'Pausar' : 'Reproducir'}
       </button>
       <div className="scroll-cue" aria-hidden="true"><i />Descubrir</div>
     </section>
