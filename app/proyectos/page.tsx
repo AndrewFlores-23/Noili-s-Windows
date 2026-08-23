@@ -17,10 +17,9 @@ export default function ProjectsPage() {
           const showFullPortrait = project.title === 'Un asiento personal';
 
           return (
-            <article className={`gallery-project gallery-project-${(index % 3) + 1}`} key={project.title}>
+            <article className={`gallery-project gallery-project-${(index % 3) + 1}${showFullPortrait ? ' gallery-project-portrait' : ''}`} key={project.title}>
               <div className={`gallery-image${showFullPortrait ? ' gallery-image-contain' : ''}`}>
-                {showFullPortrait && <img className="gallery-image-backdrop" src={project.image} alt="" aria-hidden="true" loading="lazy" />}
-                <img className={showFullPortrait ? 'gallery-image-foreground' : undefined} src={project.image} alt={project.alt} loading={index < 2 ? 'eager' : 'lazy'} />
+                <img src={project.image} alt={project.alt} loading={index < 2 ? 'eager' : 'lazy'} />
                 <span className="real-badge glass-panel">Proyecto real</span>
               </div>
               <div className="gallery-copy"><span>0{index + 1} · {project.type}</span><h2>{project.title}</h2></div>
