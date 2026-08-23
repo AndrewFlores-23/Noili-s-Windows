@@ -1,31 +1,11 @@
-'use client';
-
 import Link from 'next/link';
-import { useRef, useState } from 'react';
 import { asset } from '../data';
 import ArrowIcon from './ArrowIcon';
 
 export default function VideoHero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(true);
-
-  const respectReducedMotion = () => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      videoRef.current?.pause();
-      setPlaying(false);
-    }
-  };
-
-  const toggle = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) { void video.play(); setPlaying(true); }
-    else { video.pause(); setPlaying(false); }
-  };
-
   return (
     <section className="home-hero">
-      <video ref={videoRef} autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-living.png')} onLoadedData={respectReducedMotion} aria-hidden="true">
+      <video autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-living.png')} aria-hidden="true">
         <source src={asset('/media/hero-optimized.mp4')} type="video/mp4" />
       </video>
       <div className="hero-overlay" />
@@ -38,9 +18,6 @@ export default function VideoHero() {
           <Link className="pill-button ghost" href="/catalogo/">Abrir catálogo</Link>
         </div>
       </div>
-      <button className="media-control glass-panel" type="button" onClick={toggle} aria-label={playing ? 'Pausar video' : 'Reproducir video'}>
-        <span className={`media-symbol ${playing ? 'is-pause' : 'is-play'}`} aria-hidden="true" />{playing ? 'Pausar' : 'Reproducir'}
-      </button>
       <div className="scroll-cue" aria-hidden="true"><i />Descubrir</div>
     </section>
   );
