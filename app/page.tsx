@@ -68,9 +68,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-cta page-shell">
-        <div className="home-cta-copy"><p className="kicker">Las Catalinas · Huacas</p><h2>Tu próximo ambiente empieza con una conversación.</h2></div>
-        <Link className="round-link" href="/contacto/"><span>Hablemos</span><b><ArrowIcon /></b></Link>
+      <section className="home-cta">
+        <img className="home-cta-background" src={asset('/media/las-catalinas-beach.avif')} alt="Vista aérea de Las Catalinas y su costa" loading="lazy" />
+        <span className="home-cta-shade" aria-hidden="true" />
+        <div className="home-cta-inner page-shell">
+          <div className="home-cta-copy"><p className="kicker kicker-light">Las Catalinas · Huacas</p><h2>Tu próximo ambiente empieza con una conversación.</h2></div>
+          <Link className="conversation-link glass-panel" href="/contacto/"><span><small>Inicia tu proyecto</small><strong>Hablemos</strong></span><b><ArrowIcon /></b></Link>
+        </div>
       </section>
       <SiteFooter />
       <Link className="mobile-contact" href="/contacto/"><span>Solicitar asesoría</span><b><ArrowIcon /></b></Link>
