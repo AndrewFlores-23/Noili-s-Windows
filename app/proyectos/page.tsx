@@ -16,7 +16,10 @@ export default function ProjectsPage() {
         {projects.map((project, index) => (
             <article className={`gallery-project gallery-project-${(index % 3) + 1}`} key={project.title}>
               <div className="gallery-image">
-                <img src={project.image} alt={project.alt} loading={index < 2 ? 'eager' : 'lazy'} />
+                <picture>
+                  {project.mobileImage && <source media="(max-width: 759px)" srcSet={project.mobileImage} />}
+                  <img src={project.image} alt={project.alt} loading={index < 2 ? 'eager' : 'lazy'} />
+                </picture>
                 <span className="real-badge glass-panel">Proyecto real</span>
               </div>
               <div className="gallery-copy"><span>0{index + 1} · {project.type}</span><h2>{project.title}</h2></div>
