@@ -11,8 +11,14 @@ export default function VideoHero() {
         alt=""
         aria-hidden="true"
       />
-      <video autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-living.png')} aria-hidden="true">
+      <video className="hero-video hero-video-left" autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-living.png')} aria-hidden="true">
         <source src={asset('/media/hero-optimized.mp4')} type="video/mp4" />
+      </video>
+      <video className="hero-video hero-video-center" autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-curtains.png')} aria-hidden="true">
+        <source media="(min-width: 1050px)" src={asset('/media/hero-center.mp4')} type="video/mp4" />
+      </video>
+      <video className="hero-video hero-video-right" autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-bedroom.png')} aria-hidden="true">
+        <source media="(min-width: 1050px)" src={asset('/media/hero-right.mp4')} type="video/mp4" />
       </video>
       <div className="hero-overlay" />
       <div className="hero-copy-block glass-panel">
