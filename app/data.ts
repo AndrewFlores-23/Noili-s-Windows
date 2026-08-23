@@ -107,7 +107,7 @@ export const projects = [
   { title: 'Calma tropical', type: 'Mobiliario a medida', image: asset('/media/project-living.png'), alt: 'Sala contemporánea con sofá blanco y madera' },
   { title: 'Luz en equilibrio', type: 'Cortinas · Interiorismo', image: asset('/media/project-curtains.png'), alt: 'Sala con cortinas blancas de piso a techo' },
   { title: 'Textura serena', type: 'Showroom · Curaduría', image: asset('/media/project-lounge.png'), alt: 'Sala de muestra con sillones curvos y cortinas' },
-  { title: 'Un asiento personal', type: 'Suite · Textiles', image: asset('/media/project-suite-lilac.png'), alt: 'Suite con sillones y textiles color lavanda' },
+  { title: 'Un asiento personal', type: 'Suite · Textiles', image: asset('/media/project-suite-lilac-wide.png'), alt: 'Suite panorámica con sillones y textiles color lavanda' },
   { title: 'Descanso natural', type: 'Bedding · Cabecera', image: asset('/media/project-bedroom.png'), alt: 'Dormitorio neutro con cabecera tapizada' },
   { title: 'Color que habita', type: 'Accesorios · Cojines', image: asset('/media/collection-red.png'), alt: 'Cama con cojines rojos personalizados' },
 ];
