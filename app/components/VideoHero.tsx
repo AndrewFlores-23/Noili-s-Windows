@@ -1,8 +1,22 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { asset } from '../data';
 import ArrowIcon from './ArrowIcon';
 
 export default function VideoHero() {
+  const [showDesktopVideos, setShowDesktopVideos] = useState(false);
+
+  useEffect(() => {
+    const desktopQuery = window.matchMedia('(min-width: 1050px)');
+    const updateVideos = () => setShowDesktopVideos(desktopQuery.matches);
+
+    updateVideos();
+    desktopQuery.addEventListener('change', updateVideos);
+    return () => desktopQuery.removeEventListener('change', updateVideos);
+  }, []);
+
   return (
     <section className="home-hero">
       <img
@@ -14,12 +28,16 @@ export default function VideoHero() {
       <video className="hero-video hero-video-left" autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-living.png')} aria-hidden="true">
         <source src={asset('/media/hero-optimized.mp4')} type="video/mp4" />
       </video>
-      <video className="hero-video hero-video-center" autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-curtains.png')} aria-hidden="true">
-        <source media="(min-width: 1050px)" src={asset('/media/hero-center.mp4')} type="video/mp4" />
-      </video>
-      <video className="hero-video hero-video-right" autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-bedroom.png')} aria-hidden="true">
-        <source media="(min-width: 1050px)" src={asset('/media/hero-right.mp4')} type="video/mp4" />
-      </video>
+      {showDesktopVideos && (
+        <>
+          <video className="hero-video hero-video-center" autoPlay muted loop playsInline preload="auto" poster={asset('/media/project-curtains.png')} aria-hidden="true">
+            <source src={asset('/media/hero-center.mp4')} type="video/mp4" />
+          </video>
+          <video className="hero-video hero-video-right" autoPlay muted loop playsInline preload="auto" poster={asset('/media/project-bedroom.png')} aria-hidden="true">
+            <source src={asset('/media/hero-right.mp4')} type="video/mp4" />
+          </video>
+        </>
+      )}
       <div className="hero-overlay" />
       <div className="hero-copy-block glass-panel">
         <div className="hero-heading">
