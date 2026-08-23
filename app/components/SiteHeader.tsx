@@ -14,7 +14,7 @@ export default function SiteHeader() {
     <>
       <header className="glass-nav">
         <Link className="nav-brand" href="/" aria-label="Noily's, inicio">
-          <img src={asset('/media/noilys-logo.png')} alt="" />
+          <img src={asset('/media/noilys-logo-transparent-v2.png')} alt="" />
           <span><strong>Noily&apos;s</strong><small>Window Treatment &amp; More</small></span>
         </Link>
         <nav className="nav-desktop" aria-label="Navegación principal">

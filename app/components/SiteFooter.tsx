@@ -7,6 +7,7 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-top">
         <div className="footer-brand">
+          <img className="footer-logo" src={asset('/media/noilys-logo-transparent-v2.png')} alt="Logo de Noily's Window Treatment & More" />
           <span>Noily&apos;s</span>
           <small>Window Treatment &amp; More</small>
           <p>Interiores, textiles y soluciones a medida en Guanacaste.</p>
