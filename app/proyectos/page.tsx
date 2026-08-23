@@ -28,7 +28,7 @@ export default function ProjectsPage() {
           );
         })}
       </section>
-      <section className="project-cta page-shell"><div><p className="kicker">Tu espacio puede ser el siguiente</p><h2>Diseñemos algo auténticamente tuyo.</h2></div><Link className="round-link" href="/contacto/"><span>Iniciar proyecto</span><b><ArrowIcon /></b></Link></section>
+      <section className="project-cta page-shell"><div><p className="kicker">Tu espacio puede ser el siguiente</p><h2>Diseñemos algo auténticamente tuyo.</h2></div><Link className="conversation-link project-conversation-link glass-panel" href="/contacto/"><span><small>Inicia tu proyecto</small><strong>Hablemos</strong></span><b><ArrowIcon /></b></Link></section>
       <SiteFooter />
     </main>
   );

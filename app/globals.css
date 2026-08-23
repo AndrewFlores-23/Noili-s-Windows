@@ -129,6 +129,7 @@ p { margin:0; }
 .conversation-link small { color:rgba(255,255,255,.62); font-size:7px; font-weight:800; text-transform:uppercase; letter-spacing:.14em; }
 .conversation-link strong { font:400 24px/1 Georgia,serif; letter-spacing:-.03em; }
 .conversation-link b { width:54px; height:54px; display:grid; place-items:center; flex:0 0 54px; border-radius:18px; background:var(--teal); color:var(--ink); }
+.project-conversation-link { background:linear-gradient(135deg,rgba(21,56,58,.93),rgba(17,91,94,.78)); border-color:rgba(85,211,210,.38); box-shadow:0 20px 48px rgba(8,43,45,.2),inset 0 1px 0 rgba(255,255,255,.28); }
 .round-link { width:142px; height:142px; display:flex; flex-direction:column; align-items:center; justify-content:center; justify-self:end; gap:12px; border-radius:50%; background:var(--teal); box-shadow:0 22px 45px rgba(20,120,124,.2); font-size:12px; font-weight:800; }
 .round-link b { font-size:20px; }
 
