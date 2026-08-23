@@ -8,10 +8,10 @@ import { asset } from '../data';
 export const metadata: Metadata = { title: 'Servicios', description: 'Tratamientos de ventanas, mobiliario, textiles y diseño interior con servicio integral.' };
 
 const services = [
-  { number: '01', title: 'Window treatments', eyebrow: 'Blinds · Drapes · Shades · Curtains · Valances', copy: 'Diseñamos, medimos, confeccionamos e instalamos soluciones que equilibran luz, privacidad y arquitectura.', image: '/media/project-curtains.png' },
-  { number: '02', title: 'Mobiliario a medida', eyebrow: 'Sofás · Butacas · Cabeceras', copy: 'Piezas creadas para las proporciones, el uso y la personalidad de cada ambiente.', image: '/media/project-living.png' },
+  { number: '01', title: 'Window treatments', eyebrow: 'Blinds · Drapes · Shades · Curtains · Valances', copy: 'Diseñamos, medimos, confeccionamos e instalamos soluciones que equilibran luz, privacidad y arquitectura.', image: '/media/project-curtains.webp' },
+  { number: '02', title: 'Mobiliario a medida', eyebrow: 'Sofás · Butacas · Cabeceras', copy: 'Piezas creadas para las proporciones, el uso y la personalidad de cada ambiente.', image: '/media/project-living.webp' },
   { number: '03', title: 'Accessories & bedding', eyebrow: 'Cojines · Textiles · Ropa de cama', copy: 'Combinamos color, patrones y texturas para completar el espacio con intención.', image: '/media/catalog-bedding.webp' },
-  { number: '04', title: 'Diseño interior', eyebrow: 'Concepto · Curaduría · Instalación', copy: 'Un acompañamiento integral para residencias, hospitality y espacios comerciales.', image: '/media/project-lounge.png' },
+  { number: '04', title: 'Diseño interior', eyebrow: 'Concepto · Curaduría · Instalación', copy: 'Un acompañamiento integral para residencias, hospitality y espacios comerciales.', image: '/media/project-lounge.webp' },
 ];
 
 export default function ServicesPage() {

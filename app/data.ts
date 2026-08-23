@@ -63,7 +63,7 @@ export const catalogItems: CatalogItem[] = [
     title: 'Cortinas a medida',
     category: 'curtains',
     categoryLabel: 'Curtains · Cortinas',
-    image: asset('/media/project-curtains.png'),
+    image: asset('/media/project-curtains.webp'),
     alt: 'Cortinas blancas instaladas de piso a techo',
     note: 'Confección e instalación profesional.',
   },
@@ -71,7 +71,7 @@ export const catalogItems: CatalogItem[] = [
     title: 'Cojines de autor',
     category: 'accessories',
     categoryLabel: 'Accessories · Accesorios',
-    image: asset('/media/collection-pillows.png'),
+    image: asset('/media/collection-pillows.webp'),
     alt: 'Colección de cojines decorativos',
     note: 'Combinaciones de color, textura y forma.',
   },
@@ -97,19 +97,19 @@ export const catalogItems: CatalogItem[] = [
     title: 'Bedding con acento rojo',
     category: 'bedding',
     categoryLabel: 'Bedding · Ropa de cama',
-    image: asset('/media/collection-red.png'),
+    image: asset('/media/collection-red.webp'),
     alt: 'Ropa de cama blanca con cojines rojos',
     note: 'Cojines y bolster coordinados a medida.',
   },
 ];
 
 export const projects = [
-  { title: 'Calma tropical', type: 'Mobiliario a medida', image: asset('/media/project-living.png'), alt: 'Sala contemporánea con sofá blanco y madera' },
-  { title: 'Luz en equilibrio', type: 'Cortinas · Interiorismo', image: asset('/media/project-curtains.png'), alt: 'Sala con cortinas blancas de piso a techo' },
-  { title: 'Textura serena', type: 'Showroom · Curaduría', image: asset('/media/project-lounge.png'), alt: 'Sala de muestra con sillones curvos y cortinas' },
-  { title: 'Un asiento personal', type: 'Suite · Textiles', image: asset('/media/project-suite-lilac-wide.png'), alt: 'Suite panorámica con sillones y textiles color lavanda' },
-  { title: 'Descanso natural', type: 'Bedding · Cabecera', image: asset('/media/project-bedroom.png'), alt: 'Dormitorio neutro con cabecera tapizada' },
-  { title: 'Color que habita', type: 'Accesorios · Cojines', image: asset('/media/collection-red.png'), alt: 'Cama con cojines rojos personalizados' },
+  { title: 'Calma tropical', type: 'Mobiliario a medida', image: asset('/media/project-living.webp'), alt: 'Sala contemporánea con sofá blanco y madera' },
+  { title: 'Luz en equilibrio', type: 'Cortinas · Interiorismo', image: asset('/media/project-curtains.webp'), alt: 'Sala con cortinas blancas de piso a techo' },
+  { title: 'Textura serena', type: 'Showroom · Curaduría', image: asset('/media/project-lounge.webp'), alt: 'Sala de muestra con sillones curvos y cortinas' },
+  { title: 'Un asiento personal', type: 'Suite · Textiles', image: asset('/media/project-suite-lilac-wide.webp'), alt: 'Suite panorámica con sillones y textiles color lavanda' },
+  { title: 'Descanso natural', type: 'Bedding · Cabecera', image: asset('/media/project-bedroom.webp'), alt: 'Dormitorio neutro con cabecera tapizada' },
+  { title: 'Color que habita', type: 'Accesorios · Cojines', image: asset('/media/collection-red.webp'), alt: 'Cama con cojines rojos personalizados' },
 ];
 
 export const navItems = [

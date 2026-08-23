@@ -22,7 +22,7 @@ export default function CatalogPage() {
         <CatalogExplorer />
       </section>
       <section className="catalog-consult page-shell">
-        <div className="catalog-consult-image"><img src={asset('/media/collection-pillows.png')} alt="Muestrario de cojines decorativos" loading="lazy" /></div>
+        <div className="catalog-consult-image"><img src={asset('/media/collection-pillows.webp')} alt="Muestrario de cojines decorativos" loading="lazy" /></div>
         <div><p className="kicker kicker-light">Hecho para ti</p><h2>¿Encontraste una línea que te interesa?</h2><p>Escríbenos y coordinamos una visita, toma de medidas o asesoría en showroom.</p><a className="pill-button light" href="https://wa.me/50689760770" target="_blank" rel="noreferrer">Consultar por WhatsApp <ArrowIcon /></a></div>
       </section>
       <SiteFooter />

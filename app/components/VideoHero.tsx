@@ -19,21 +19,16 @@ export default function VideoHero() {
 
   return (
     <section className="home-hero">
-      <img
-        className="hero-desktop-backdrop"
-        src={asset('/media/project-living.png')}
-        alt=""
-        aria-hidden="true"
-      />
-      <video className="hero-video hero-video-left" autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-living.png')} aria-hidden="true">
+      {showDesktopVideos && <img className="hero-desktop-backdrop" src={asset('/media/project-living.webp')} alt="" aria-hidden="true" />}
+      <video className="hero-video hero-video-left" autoPlay muted loop playsInline preload="metadata" poster={asset('/media/project-living.webp')} aria-hidden="true">
         <source src={asset('/media/hero-optimized.mp4')} type="video/mp4" />
       </video>
       {showDesktopVideos && (
         <>
-          <video className="hero-video hero-video-center" autoPlay muted loop playsInline preload="auto" poster={asset('/media/project-curtains.png')} aria-hidden="true">
+          <video className="hero-video hero-video-center" autoPlay muted loop playsInline preload="auto" poster={asset('/media/project-curtains.webp')} aria-hidden="true">
             <source src={asset('/media/hero-center.mp4')} type="video/mp4" />
           </video>
-          <video className="hero-video hero-video-right" autoPlay muted loop playsInline preload="auto" poster={asset('/media/project-bedroom.png')} aria-hidden="true">
+          <video className="hero-video hero-video-right" autoPlay muted loop playsInline preload="auto" poster={asset('/media/project-bedroom.webp')} aria-hidden="true">
             <source src={asset('/media/hero-right.mp4')} type="video/mp4" />
           </video>
         </>
